@@ -2,20 +2,20 @@
 Summary:	A conversation server built using Twisted
 Summary(pl):	Serwer konwersacyjny tworzony przy u¿yciu ¶rodowiska Twisted
 Name:		Quotient
-Version:	0.8.8
+Version:	0.9.1
 Release:	1
 License:	LGPL
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/divmod/%{name}-%{version}.tar.gz
-# Source0-md5:	650cdb4ae2b59a0f432e49804f2923a9
+Source0:	http://www.divmod.org/users/release/divmod/%{name}-%{version}.tar.gz
+# Source0-md5:	406fdd2160843bc3be43486b8e30273f
 URL:		http://www.divmod.org/Home/
 BuildRequires:	python-devel >= 2.3
 %pyrequires_eq	python-modules
 Requires:	python >= 2.3
 Requires:	python-Imaging
 Requires:	python-Lupy >= 0.1.5.5
-Requires:	python-Twisted >= 1.1.1
-Requires:	%{name}-nevow = %{version}-%{release}
+Requires:	python-Twisted >= 1.3.0
+Requires:	python-nevow >= 0.2.0
 Requires:	python-atop = %{version}-%{release}
 Requires:	spambayes >= 1.0a7-0.2
 BuildArch:	noarch
@@ -71,75 +71,31 @@ COG.
 
 Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
 
-%package nevow
-Summary:	A simple transactional object database built on Berkeley DB
-Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
-Group:		Libraries/Python
-Requires:	python-Twisted >= 1.1.1
-Obsoletes:	python-nevow
+%package doc
+Summary:	Documentation for Quotient conversation server
+Summary(pl):	Dokumentacja dla serwera komunikacyjnego Quotient
+Group:		Applications/Communications
+Requires:	%{name} = %{version}-%{release}
 
-%description nevow
-Nevow is a next-generation web application templating system, based on
-the ideas developed in the Twisted Woven package. Its main focus is on
-separating the HTML template from both the business logic and the
-display logic, while allowing the programmer to write pure Python code
-as much as possible. It separates your code into 'data' and 'render'
-functions, a simplified implementation of traditional MVC. It has
-various parts which can be used individually or as a whole, integrated
-web solution:
+%description doc
+This package contains documentation files for Quotient conversation
+server.
 
-* XHTML templates: contain no programming logic, only nodes tagged
-  with nevow attributes,
-* data/render methods: simplified MVC,
-* stan: An s-expression-like syntax for expressing xml in pure python,
-* formless: For describing the types of objects which may be passed to
-  methods of your classes, validating and coercing string input from
-  either web or command-line sources, and calling your methods
-  automatically once validation passes,
-* freeform: For rendering web forms based on formless type
-  descriptions, accepting form posts and passing them to formless
-  validators, and rendering error forms in the event validation fails,
-* livepage: Cross-browser JavaScript glue for sending client side
-  events to the server and server side events to the client after the
-  page has loaded, without causing the entire page to refresh.
+%description doc -l pl
+Pakiet zawieraj±cy dokumentacjê dla serwera komunikacyjnego Quotient.
 
-This is deprecated version of nevow module. It works only with
-Quotient server. If you need nevow module in your programs, try
-python-nevow package.
+%package utils
+Summary:	Tools for Quotient conversation server
+Summary(pl):	Programy narzêdziowe dla serwera komunikacyjnego Quotient
+Group:		Applications/Communications
+Requires:	%{name} = %{version}-%{release}
 
-%description nevow -l pl
-Nevow jest systemem szblonów wspomagaj±cym tworzenie aplikacji
-webowych, bazuj±cym na pomys³ach zawartych w rozwijanym w ramach
-projektu Twisted pakiecie Woven. G³ównym zadaniem Nevow jest
-umo¿liwienie deweloperowi odseparowanie kodu szablonu HTML od logiki
-biznesowej i logiki prezentacyjnej tworzonego systemu. Nevow rozdziela
-Twój kod na funkcje zarz±dzania danymi oraz ich wy¶wietlania, co jest
-uproszczon± wersj± wzroca projektowego MVC. Na Nevow sk³ada siê zbiór
-ró¿nych funkcjonalno¶ci, które mog± byæ u¿ywane osobno albo jako
-ca³o¶ciwe rozwi±zanie wspomagaj±ce tworzenie aplikacji webowych:
+%description utils
+This package contains tools for Quotient conversation server.
 
-* szablony XHTML: nie zawieraj± logiki programistycznej, jedynie
-  wierzcho³ki tagowane atrybutami przestrzeni nazw nevow,
-* funkcje zarz±dzania danymi i wy¶wietlaniem: uproszczenie wzorca
-  projektowego Model-Widok-Kontroler (MVC),
-* stan: sk³adnia wyra¿ania elementów jêzyka xml w czystym pythonie w
-  oparciu o s-wyra¿enia,
-* formless: opisywanie typów obiektów mog±cych byæ argumentami
-  tworzonych przez Ciebie metod klas, weryfikacji i poprawiania
-  znakowych danych wej¶ciowych od klientów www lub innych ¼róde³ oraz
-  automatyczne wywo³ywanie Twoich metod po poprawnej weryfikacji,
-* freeform: renderowanie formularzy HTML oparte o opisy typów
-  formless, akceptacja formularzy dostarczonych przez klienta, analiza
-  ich zawarto¶ci w oparciu o mechanizm weryfikatorów formless oraz
-  tworzenie komunikatów o b³êdach podczas nieudanej weryfikacji
-  formularza,
-* livepage: miêdzyplatformowy "klej" JavaScript umo¿liwiaj±cy
-  przesy³anie efektów ubocznych pracy klienta do serwera i odwrotnie
-  po za³adowaniu strony bez konieczno¶ci jej od¶wie¿ania.
-
-Jest to starsza wersja modu³u nevow. Dzia³a ona jedynie z serwerem
-Quotient. Je¶li chcesz u¿ywaæ nevow w swoich programach, u¿yj
-pakietu python-nevow.
+%description utils -l pl
+Pakiet zawieraj±cy programy narzêdziowe dla serwera komunikacyjnego
+Quotient.
 
 %prep
 %setup -q
@@ -149,7 +105,7 @@ python setup.py build_ext
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
+install -d $RPM_BUILD_ROOT{%{py_sitescriptdir},%{_datadir}/quotient}
 
 python setup.py install \
         --root=$RPM_BUILD_ROOT \
@@ -158,18 +114,24 @@ python setup.py install \
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -name \*.py -exec rm {} \;
 
+cp -ar tools/* $RPM_BUILD_ROOT%{_datadir}/quotient
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE README doc
+%doc LICENSE README
 %{py_sitescriptdir}/quotient
 
 %files -n python-atop
 %defattr(644,root,root,755)
 %{py_sitescriptdir}/atop
 
-%files nevow
+%files doc
 %defattr(644,root,root,755)
-%{py_sitescriptdir}/nevow
+%doc doc/*
+
+%files utils
+%defattr(644,root,root,755)
+%{_datadir}/quotient
