@@ -130,7 +130,7 @@ funkcjonalno¶ci± podobn± do innych pakietów pythona takich jak ZODB i
 COG.
 
 Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
-				  
+
 %prep
 %setup -q
 
