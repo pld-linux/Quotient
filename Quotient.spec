@@ -37,9 +37,9 @@ commitments.
 Obecnie g³ówn± funkcj± Quotient jest bycie w pe³ni wyposa¿on±
 platform± email, spe³niaj±c± zadania klientów oraz serwerów protoko³ów
 IMAP4, POP3 i SMTP. Quotient posiada te¿ zintegrowany interfejs
-odbioru poczty poprzez www oraz filtr niechcianej poczty u¿ywaj±cy
+odbioru poczty poprzez WWW oraz filtr niechcianej poczty u¿ywaj±cy
 bayesowskich technik wykrywania niechcianych wiadomo¶ci, który mo¿e
-byæ rozszerzany poprzez interfejs www lub IMAP.
+byæ rozszerzany poprzez interfejs WWW lub IMAP.
 
 W przysz³o¶ci Quotient rozwinie siê do nakierowanego na osobê serwera
 aplikacji. Quotient bêdzie ¶ledzi³ i utrzymywa³ informacje o
