@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	A conversation server built using Twisted
 Summary(pl):	Serwer konwersacyjny tworzony przy u¿yciu ¶rodowiska Twisted
 Name:		Quotient
