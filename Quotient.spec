@@ -15,8 +15,10 @@ Requires:	python >= 2.3
 Requires:	python-Imaging
 Requires:	python-Lupy >= 0.1.5.5
 Requires:	python-Twisted >= 1.1.1
-Requires:	python-nevow = %{version}-%{release}
+Requires:	%{name}-nevow = %{version}-%{release}
+Requires:	python-atop = %{version}-%{release}
 Requires:	spambayes >= 1.0a7-0.2
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,14 +45,40 @@ W przysz³o¶ci Quotient rozwinie siê do nakierowanego na osobê serwera
 aplikacji. Quotient bêdzie ¶ledzi³ i utrzymywa³ informacje o
 kontaktach oraz umo¿liwia³ ³atwe zarz±dzanie stopniem zaanga¿owania.
 
-%package -n python-nevow
-Summary:	Web application templating system
-Summary(pl):	System szablonów do tworzenia stron www
+%package -n python-atop
+Summary:	A simple transactional object database built on Berkeley DB
+Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
 Group:		Libraries/Python
-Requires:	python-atop = %{version}-%{release}
 Requires:	python-Twisted >= 1.1.1
+Requires:	python-bsddb
 
-%description -n python-nevow
+%description -n python-atop
+ATOP, the Atomic Transactional Object Persistor, is a Python object
+database implemented atop the Berkeley DB and bsddb python module,
+with functional similarities to other python packages such as ZODB and
+COG.
+
+Atop was designed in support of the Quotient messaging server. The
+primary requirement was for a low-latency data store that was still
+reliable and transactional, and still amenable to on-the-fly upgrading
+and rapid code iterations.
+
+%description -n python-atop -l pl
+ATOP (Atomic Transactional Object Persistor) jest obiektow± baz±
+danych implementuj±c± interfejsy Berkeley DB i bsddb, z
+funkcjonalno¶ci± podobn± do innych pakietów pythona takich jak ZODB i
+COG.
+
+Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
+
+%package nevow
+Summary:	A simple transactional object database built on Berkeley DB
+Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
+Group:		Libraries/Python
+Requires:	python-Twisted >= 1.1.1
+Obsoletes:	python-nevow
+
+%description nevow
 Nevow is a next-generation web application templating system, based on
 the ideas developed in the Twisted Woven package. Its main focus is on
 separating the HTML template from both the business logic and the
@@ -75,7 +103,11 @@ web solution:
   events to the server and server side events to the client after the
   page has loaded, without causing the entire page to refresh.
 
-%description -n python-nevow -l pl
+This is deprecated version of nevow module. It works only with
+Quotient server. If you need nevow module in your programs, try
+python-nevow package.
+
+%description nevow -l pl
 Nevow jest systemem szblonów wspomagaj±cym tworzenie aplikacji
 webowych, bazuj±cym na pomys³ach zawartych w rozwijanym w ramach
 projektu Twisted pakiecie Woven. G³ównym zadaniem Nevow jest
@@ -105,31 +137,9 @@ ca³o¶ciwe rozwi±zanie wspomagaj±ce tworzenie aplikacji webowych:
   przesy³anie efektów ubocznych pracy klienta do serwera i odwrotnie
   po za³adowaniu strony bez konieczno¶ci jej od¶wie¿ania.
 
-%package -n python-atop
-Summary:	A simple transactional object database built on Berkeley DB
-Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
-Group:		Libraries/Python
-Requires:	python-Twisted >= 1.1.1
-Requires:	python-bsddb
-
-%description -n python-atop
-ATOP, the Atomic Transactional Object Persistor, is a Python object
-database implemented atop the Berkeley DB and bsddb python module,
-with functional similarities to other python packages such as ZODB and
-COG.
-
-Atop was designed in support of the Quotient messaging server. The
-primary requirement was for a low-latency data store that was still
-reliable and transactional, and still amenable to on-the-fly upgrading
-and rapid code iterations.
-
-%description -n python-atop -l pl
-ATOP (Atomic Transactional Object Persistor) jest obiektow± baz±
-danych implementuj±c± interfejsy Berkeley DB i bsddb, z
-funkcjonalno¶ci± podobn± do innych pakietów pythona takich jak ZODB i
-COG.
-
-Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
+Jest to starsza wersja modu³u nevow. Dzia³a ona jedynie z serwerem
+Quotient. Je¶li chcesz u¿ywaæ nevow w swoich programach, u¿yj
+pakietu python-nevow.
 
 %prep
 %setup -q
@@ -139,14 +149,14 @@ python setup.py build_ext
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitedir}
+install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
 
 python setup.py install \
         --root=$RPM_BUILD_ROOT \
-	--install-lib=%{py_sitedir} \
+	--install-lib=%{py_sitescriptdir} \
 	--optimize=2
 
-find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm {} \;
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -name \*.py -exec rm {} \;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -154,12 +164,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README doc
-%{py_sitedir}/quotient
-
-%files -n python-nevow
-%defattr(644,root,root,755)
-%{py_sitedir}/nevow
+%{py_sitescriptdir}/quotient
 
 %files -n python-atop
 %defattr(644,root,root,755)
-%{py_sitedir}/atop
+%{py_sitescriptdir}/atop
+
+%files nevow
+%defattr(644,root,root,755)
+%{py_sitescriptdir}/nevow
