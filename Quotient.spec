@@ -3,7 +3,7 @@ Summary:	A conversation server built using Twisted
 Summary(pl):	Serwer konwersacyjny tworzony przy u¿yciu ¶rodowiska Twisted
 Name:		Quotient
 Version:	0.9.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Applications/Communications
 Source0:	http://www.divmod.org/users/release/divmod/%{name}-%{version}.tar.gz
@@ -12,11 +12,12 @@ URL:		http://www.divmod.org/Home/
 BuildRequires:	python-devel >= 2.3
 %pyrequires_eq	python-modules
 Requires:	python >= 2.3
-Requires:	python-Imaging
-Requires:	python-Lupy >= 0.1.5.5
+Requires:	python-Imaging >= 1.1.4
+Requires:	python-Lupy >= 0.2.1
 Requires:	python-Twisted >= 1.3.0
-Requires:	python-nevow >= 0.2.0
 Requires:	python-atop = %{version}-%{release}
+Requires:	python-nevow >= 0.2.0
+Requires:	python-pyOpenSSL
 Requires:	spambayes >= 1.0a7-0.2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,7 +50,7 @@ kontaktach oraz umo¿liwia³ ³atwe zarz±dzanie stopniem zaanga¿owania.
 Summary:	A simple transactional object database built on Berkeley DB
 Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
 Group:		Libraries/Python
-Requires:	python-Twisted >= 1.1.1
+Requires:	python-Twisted >= 1.3.0
 Requires:	python-bsddb
 
 %description -n python-atop
