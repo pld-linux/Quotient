@@ -3,7 +3,7 @@ Summary:	A conversation server built using Twisted
 Summary(pl):	Serwer konwersacyjny tworzony przy u¿yciu ¶rodowiska Twisted
 Name:		Quotient
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Applications/Communications
 Source0:	http://www.divmod.org/users/release/divmod/%{name}-%{version}.tar.gz
@@ -121,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE README
+%doc README
 %{py_sitescriptdir}/quotient
 
 %files -n python-atop
