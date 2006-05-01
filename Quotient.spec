@@ -74,7 +74,7 @@ Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
 %package doc
 Summary:	Documentation for Quotient conversation server
 Summary(pl):	Dokumentacja dla serwera komunikacyjnego Quotient
-Group:		Applications/Communications
+Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
 %description doc
