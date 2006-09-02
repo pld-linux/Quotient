@@ -114,7 +114,7 @@ python setup.py install \
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -name \*.py -exec rm {} \;
 
-cp -ar tools/* admin $RPM_BUILD_ROOT%{_datadir}/quotient
+cp -a tools/* admin $RPM_BUILD_ROOT%{_datadir}/quotient
 
 %clean
 rm -rf $RPM_BUILD_ROOT
