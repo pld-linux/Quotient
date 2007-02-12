@@ -1,5 +1,5 @@
 Summary:	A conversation server built using Twisted
-Summary(pl):	Serwer konwersacyjny tworzony przy u¿yciu ¶rodowiska Twisted
+Summary(pl.UTF-8):   Serwer konwersacyjny tworzony przy uÅ¼yciu Å›rodowiska Twisted
 Name:		Quotient
 Version:	0.9.1
 Release:	4
@@ -33,21 +33,21 @@ simulation of your personal reality. It keeps track of your
 communications and enables you to effortlessly prioritize your
 commitments.
 
-%description -l pl
-Obecnie g³ówn± funkcj± Quotient jest bycie w pe³ni wyposa¿on±
-platform± email, spe³niaj±c± zadania klientów oraz serwerów protoko³ów
-IMAP4, POP3 i SMTP. Quotient posiada te¿ zintegrowany interfejs
-odbioru poczty poprzez WWW oraz filtr niechcianej poczty u¿ywaj±cy
-bayesowskich technik wykrywania niechcianych wiadomo¶ci, który mo¿e
-byæ rozszerzany poprzez interfejs WWW lub IMAP.
+%description -l pl.UTF-8
+Obecnie gÅ‚Ã³wnÄ… funkcjÄ… Quotient jest bycie w peÅ‚ni wyposaÅ¼onÄ…
+platformÄ… email, speÅ‚niajÄ…cÄ… zadania klientÃ³w oraz serwerÃ³w protokoÅ‚Ã³w
+IMAP4, POP3 i SMTP. Quotient posiada teÅ¼ zintegrowany interfejs
+odbioru poczty poprzez WWW oraz filtr niechcianej poczty uÅ¼ywajÄ…cy
+bayesowskich technik wykrywania niechcianych wiadomoÅ›ci, ktÃ³ry moÅ¼e
+byÄ‡ rozszerzany poprzez interfejs WWW lub IMAP.
 
-W przysz³o¶ci Quotient rozwinie siê do nakierowanego na osobê serwera
-aplikacji. Quotient bêdzie ¶ledzi³ i utrzymywa³ informacje o
-kontaktach oraz umo¿liwia³ ³atwe zarz±dzanie stopniem zaanga¿owania.
+W przyszÅ‚oÅ›ci Quotient rozwinie siÄ™ do nakierowanego na osobÄ™ serwera
+aplikacji. Quotient bÄ™dzie Å›ledziÅ‚ i utrzymywaÅ‚ informacje o
+kontaktach oraz umoÅ¼liwiaÅ‚ Å‚atwe zarzÄ…dzanie stopniem zaangaÅ¼owania.
 
 %package -n python-atop
 Summary:	A simple transactional object database built on Berkeley DB
-Summary(pl):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
+Summary(pl.UTF-8):   Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
 Group:		Libraries/Python
 Requires:	python-Twisted >= 1.3.0
 Requires:	python-bsddb
@@ -63,17 +63,17 @@ primary requirement was for a low-latency data store that was still
 reliable and transactional, and still amenable to on-the-fly upgrading
 and rapid code iterations.
 
-%description -n python-atop -l pl
-ATOP (Atomic Transactional Object Persistor) jest obiektow± baz±
-danych implementuj±c± interfejsy Berkeley DB i bsddb, z
-funkcjonalno¶ci± podobn± do innych pakietów pythona takich jak ZODB i
+%description -n python-atop -l pl.UTF-8
+ATOP (Atomic Transactional Object Persistor) jest obiektowÄ… bazÄ…
+danych implementujÄ…cÄ… interfejsy Berkeley DB i bsddb, z
+funkcjonalnoÅ›ciÄ… podobnÄ… do innych pakietÃ³w pythona takich jak ZODB i
 COG.
 
-Atop zosta³ rozwiniêty jako czê¶æ serwera komunikacyjnego Quotient.
+Atop zostaÅ‚ rozwiniÄ™ty jako czÄ™Å›Ä‡ serwera komunikacyjnego Quotient.
 
 %package doc
 Summary:	Documentation for Quotient conversation server
-Summary(pl):	Dokumentacja dla serwera komunikacyjnego Quotient
+Summary(pl.UTF-8):   Dokumentacja dla serwera komunikacyjnego Quotient
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
@@ -81,20 +81,20 @@ Requires:	%{name} = %{version}-%{release}
 This package contains documentation files for Quotient conversation
 server.
 
-%description doc -l pl
-Pakiet zawieraj±cy dokumentacjê dla serwera komunikacyjnego Quotient.
+%description doc -l pl.UTF-8
+Pakiet zawierajÄ…cy dokumentacjÄ™ dla serwera komunikacyjnego Quotient.
 
 %package utils
 Summary:	Tools for Quotient conversation server
-Summary(pl):	Programy narzêdziowe dla serwera komunikacyjnego Quotient
+Summary(pl.UTF-8):   Programy narzÄ™dziowe dla serwera komunikacyjnego Quotient
 Group:		Applications/Communications
 Requires:	%{name} = %{version}-%{release}
 
 %description utils
 This package contains tools for Quotient conversation server.
 
-%description utils -l pl
-Pakiet zawieraj±cy programy narzêdziowe dla serwera komunikacyjnego
+%description utils -l pl.UTF-8
+Pakiet zawierajÄ…cy programy narzÄ™dziowe dla serwera komunikacyjnego
 Quotient.
 
 %prep
