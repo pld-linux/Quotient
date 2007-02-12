@@ -1,5 +1,5 @@
 Summary:	A conversation server built using Twisted
-Summary(pl.UTF-8):   Serwer konwersacyjny tworzony przy użyciu środowiska Twisted
+Summary(pl.UTF-8):	Serwer konwersacyjny tworzony przy użyciu środowiska Twisted
 Name:		Quotient
 Version:	0.9.1
 Release:	4
@@ -47,7 +47,7 @@ kontaktach oraz umożliwiał łatwe zarządzanie stopniem zaangażowania.
 
 %package -n python-atop
 Summary:	A simple transactional object database built on Berkeley DB
-Summary(pl.UTF-8):   Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
+Summary(pl.UTF-8):	Prosta transakcyjna obiektowa baza danych oparta o Berkeley DB
 Group:		Libraries/Python
 Requires:	python-Twisted >= 1.3.0
 Requires:	python-bsddb
@@ -73,7 +73,7 @@ Atop został rozwinięty jako część serwera komunikacyjnego Quotient.
 
 %package doc
 Summary:	Documentation for Quotient conversation server
-Summary(pl.UTF-8):   Dokumentacja dla serwera komunikacyjnego Quotient
+Summary(pl.UTF-8):	Dokumentacja dla serwera komunikacyjnego Quotient
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
@@ -86,7 +86,7 @@ Pakiet zawierający dokumentację dla serwera komunikacyjnego Quotient.
 
 %package utils
 Summary:	Tools for Quotient conversation server
-Summary(pl.UTF-8):   Programy narzędziowe dla serwera komunikacyjnego Quotient
+Summary(pl.UTF-8):	Programy narzędziowe dla serwera komunikacyjnego Quotient
 Group:		Applications/Communications
 Requires:	%{name} = %{version}-%{release}
 
