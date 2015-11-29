@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Source0:	http://www.divmod.org/users/release/divmod/%{name}-%{version}.tar.gz
 # Source0-md5:	406fdd2160843bc3be43486b8e30273f
 URL:		http://www.divmod.org/Home/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel >= 1:2.3
 %pyrequires_eq	python-modules
 Requires:	python >= 2.3
